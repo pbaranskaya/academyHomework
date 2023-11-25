@@ -31,7 +31,7 @@ public class Task1 {
         String a = sc.next();
         System.out.print("Слово 2: ");
         String b = sc.next();
-        System.out.println(anagram(a,b) ? "Слова являются анаграммой" : "Слова не являются анаграммой");
+        System.out.println(anagram(a, b) ? "Слова являются анаграммой" : "Слова не являются анаграммой");
         sc.close();
     }
 }
