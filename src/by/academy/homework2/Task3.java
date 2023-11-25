@@ -6,20 +6,21 @@ public class Task3 {
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Слово 1, слово 2: ");
-//        String[] words = new String[2]; // вариант 1
-//        for (int i = 0; i < 2; i++) {
-//            words[i] = sc.next();
-//        }
-//        String str = words[0].substring(0, words[0].length() / 2) +
-//                     words[1].substring(words[1].length() / 2, words[1].length());
-//        System.out.println("Полученное слово: " + str);
 
+        String[] ab = sc.nextLine().split(" ");
+        String a = ab[0];
+        String b = ab[1];
 
-        String word1 = sc.next(); // вариант 2
-        String word2 = sc.next();
-        word1 = word1.substring(0,word1.length() / 2);
-        word2 = word2.substring(word2.length() / 2, word2.length());
-        StringBuilder sb = new StringBuilder(word1 + word2);
+        for (int i = 0; i < 2; i++) {
+            if (a.length() % 2 != 0 || b.length() % 2 != 0) {
+                System.out.println("Нечетное число символов в слове/ах");
+                return;
+            }
+        }
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(a.substring(0,a.length() / 2));
+        sb.append(b.substring(b.length() / 2, b.length()));
         System.out.println("Полученное слово: " + sb);
         sc.close();
     }

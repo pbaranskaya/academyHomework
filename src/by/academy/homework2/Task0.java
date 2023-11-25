@@ -28,6 +28,8 @@ public class Task0 {
 
         int k = Integer.parseInt(nk[1]);
 
+        k = Math.abs(k); // по модулю
+
         int[] arr = new int[n];
 
         System.out.println("Массив: ");

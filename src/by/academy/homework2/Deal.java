@@ -1,6 +1,5 @@
 package by.academy.homework2;
-import java.util.Scanner;
-import java.util.Random;
+import java.util.*;
 
 public class Deal {
     public static void main(String[] args) {
@@ -35,12 +34,17 @@ public class Deal {
             }
         }
 
-        for (int i = 0; i < nCards; i++) {
-            int oneCard = i + (int) (Math.random() * (nCards - i));
-            String x = cards[oneCard];
-            cards[oneCard] = cards[i];
-            cards[i] = x;
-        }
+
+        List<String> intList = Arrays.asList(cards); // 1 вариант перетасовки
+        Collections.shuffle(intList);
+
+//        Random rand = new Random(); // 2 вариант перетасовки
+//        for (int i = 0; i < nCards; i++) {
+//            int oneCard = rand.nextInt(nCards);
+//            String x = cards[oneCard];
+//            cards[oneCard] = cards[i];
+//            cards[i] = x;
+//        }
 
         for (int i = 0; i < players * cardsForPlayer; i++) {
             System.out.println(cards[i]);
