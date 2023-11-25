@@ -25,7 +25,7 @@ public class Task2 {
         HashMap<String, Integer> hashMap = new HashMap<String, Integer>();
         int min = 999;
 
-        for ( int i = 0, currentValue = 0; i < words.length; i++ ) {
+        for (int i = 0, currentValue = 0; i < words.length; i++) {
             currentValue = countSymbols(words[i]);
             hashMap.put(words[i], currentValue);
             if (min > currentValue) {
