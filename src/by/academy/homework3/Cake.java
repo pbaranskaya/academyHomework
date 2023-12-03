@@ -1,5 +1,7 @@
 package by.academy.homework3;
 
+// черновик
+
 public class Cake extends Product {
 
     int tiers;
