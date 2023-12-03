@@ -11,7 +11,7 @@ public class Cat {
     boolean isHomeAnimal = true;
 
     public void grow() {
-        age += 1;
+        age++;
     }
 
     public void sleep() {
