@@ -1,14 +1,13 @@
 package by.academy.homework3;
 
-// черновик
 
 import java.util.Objects;
 
-public class Product {
+public abstract class Product {
 
-    String name;
-    double price;
-    double quantity;
+    protected String name;
+    protected double price;
+    protected double quantity;
 
     public Product() {
         super();

@@ -1,6 +1,5 @@
 package by.academy.homework3;
 
-// черновик
 
 import java.time.LocalDate;
 import java.util.Objects;
