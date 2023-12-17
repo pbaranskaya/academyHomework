@@ -1,14 +1,18 @@
 package by.academy.homework3;
-
-
 import java.time.LocalDate;
 import java.util.Objects;
+import java.util.Scanner;
+
+import static by.academy.homework3.DateFormat.dateFormat;
+import static by.academy.homework3.DateFormat.dateFormat1;
 
 public class User {
 
     String name;
     double money;
     LocalDate dateOfBirth;
+    String Phone;
+    String Email;
 
     public boolean hasEnoughMoney(double price) {
         return money >= price;

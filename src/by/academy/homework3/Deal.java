@@ -1,7 +1,4 @@
 package by.academy.homework3;
-
-// черновик
-
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Objects;
@@ -12,6 +9,7 @@ public class Deal {
     User buyer;
     Product[] products;
     LocalDate dealDate;
+    protected final LocalDate deadlineDate = LocalDate.now().plusDays(10);
     private int current;
 
     public double calculateFullPrice() {

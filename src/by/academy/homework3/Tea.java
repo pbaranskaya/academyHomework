@@ -1,7 +1,5 @@
 package by.academy.homework3;
 
-// черновик
-
 public class Tea extends Product {
 
     private String temperature;
