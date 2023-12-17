@@ -16,9 +16,10 @@ public class Berry extends Product {
     }
 
     @Override
-    public double discount(){ // if taste - кислый = return 0.8
-
-        return 0;
+    public double discount() { // if taste - кислый = return 0.8
+       if (taste == "кислый") {
+       }
+       return 0.8;
     }
 
     public String getTaste() {
