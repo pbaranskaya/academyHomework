@@ -25,27 +25,33 @@ public class DateFormat {
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Дата рождения: ");
-        LocalDate dateOfBirth = LocalDate.parse(sc.nextLine());
+        String date = sc.nextLine();
+//        LocalDate dateOfBirth = LocalDate.parse(date);
 
 //        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("Месяц: MMMM, день: dd, год: yyyy", Locale.US);
 //        System.out.println(dateOfBirth);
 //
 //        System.out.println(dateOfBirth.format(formatter));
-    }
 
 
 
-
-//    public static void main(String[] args) {
-//
-//        Scanner sc = new Scanner(System.in);
-//        System.out.print("Дата покупки: ");
-//        String date = sc.nextLine();
-//
 //        System.out.println(dateFormat(date) ? "Формат 1" :
 //                           dateFormat1(date) ? "Формат 2" : "Неверный формат даты");
-//
-//    }
+
+
+        if (dateFormat(date)) {
+            LocalDate dateOfBirth = LocalDate.parse(date);
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern
+                    ("Месяц: MMMM, день: dd, год: yyyy", Locale.US);
+            System.out.println(dateOfBirth.format(formatter));
+        } else if (dateFormat1(date)) {
+            LocalDate dateOfBirth = LocalDate.parse(date);
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern
+                    ("Месяц: MMMM, день: dd, год: yyyy", Locale.US);
+            System.out.println(dateOfBirth.format(formatter));
+        }
+
+    }
 }
 
 
