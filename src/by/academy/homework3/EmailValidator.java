@@ -10,4 +10,10 @@ public class EmailValidator implements Validator {
         return p;
     }
 
+    public static void main(String[] args) {
+
+        Validator v = new EmailValidator();
+        System.out.println(v.validate("pbaranskaya@gmail.com"));
+    }
+
 }

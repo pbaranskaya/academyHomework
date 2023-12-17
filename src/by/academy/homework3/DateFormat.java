@@ -1,6 +1,8 @@
 package by.academy.homework3;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,6 +20,20 @@ public class DateFormat {
         Matcher matcher = pattern.matcher(date);
         return matcher.matches();
     }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Дата рождения: ");
+        LocalDate dateOfBirth = LocalDate.parse(sc.nextLine());
+
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("Месяц: MMMM, день: dd, год: yyyy", Locale.US);
+//        System.out.println(dateOfBirth);
+//
+//        System.out.println(dateOfBirth.format(formatter));
+    }
+
+
 
 
 //    public static void main(String[] args) {

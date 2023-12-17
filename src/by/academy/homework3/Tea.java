@@ -15,6 +15,12 @@ public class Tea extends Product {
         this.type = type;
     }
 
+    @Override
+    public double discount(){ // if temperаture - холодный = return 0.8
+
+        return 0;
+    }
+
     public String getTemperature() {
         return temperature;
     }

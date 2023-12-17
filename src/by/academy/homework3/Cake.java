@@ -15,6 +15,12 @@ public class Cake extends Product {
         this.filling = filling;
     }
 
+    @Override
+    public double discount() { // if tiers - 1 = return 0.8
+
+        return 0;
+    }
+
     public int getTiers() {
         return tiers;
     }
