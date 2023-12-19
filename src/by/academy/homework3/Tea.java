@@ -47,6 +47,9 @@ public class Tea extends Product {
         return "Tea{" +
                 "temperature='" + temperature + '\'' +
                 ", type='" + type + '\'' +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
                 '}';
     }
 }

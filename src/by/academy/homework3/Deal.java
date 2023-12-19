@@ -59,7 +59,7 @@ public class Deal {
 
     private void printBill() {
         for (Product p : products) {
-            System.out.println(p.getName() + p.calculatePrice());
+            System.out.println("Позиция: " + p.getName() + " " + p.calculatePrice() + "$");
         }
         System.out.println("========");
         double fullPrice = 0;

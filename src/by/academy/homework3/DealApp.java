@@ -40,10 +40,13 @@ public class DealApp {
                     continue;
                 case "4":
                     // распечатать корзину продуктов
+                    sc.nextInt();
+                    System.out.println("Корзина:");
                     deal.printProducts();
                     continue;
                 case "5":
                     // удалить продукт из сделки
+                    System.out.println("Удалить позицию");
                     deal.deleteProduct(sc.nextInt());
                     continue;
                 case "0":
@@ -53,6 +56,8 @@ public class DealApp {
             }
         }
     }
+
+
 
 
     public static Product createProduct(Scanner sc) {
@@ -79,7 +84,7 @@ public class DealApp {
             case "3":
                 System.out.println("Введите количество");
                 quantity = sc.nextInt();
-                product = new Tea("Кертис", 3, quantity, "холодный", "с бергамотом");
+                product = new Tea("Липтон", 3, quantity, "холодный", "с бергамотом");
                 System.out.println(product);
 
                 sc.nextInt();

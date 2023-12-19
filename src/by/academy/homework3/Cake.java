@@ -45,8 +45,11 @@ public class Cake extends Product {
     @Override
     public String toString() {
         return "Cake{" +
-                "tiers=" + tiers +
+                "tiers='" + tiers + '\'' +
                 ", filling='" + filling + '\'' +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
                 '}';
     }
 }

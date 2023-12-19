@@ -47,6 +47,9 @@ public class Berry extends Product {
         return "Berry{" +
                 "taste='" + taste + '\'' +
                 ", color='" + color + '\'' +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
                 '}';
     }
 }
