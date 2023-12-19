@@ -16,9 +16,11 @@ public class Deal {
         if (products == null) {
             return 0;
         }
-
         double result = 0;
         for (Product p : products) {
+            if (p == null) {
+                continue;
+            }
             result += p.calculatePrice();
         }
         return result;
