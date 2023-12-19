@@ -2,30 +2,35 @@ package by.academy.homework3;
 
 public class Cake extends Product {
 
-    private int tiers;
+    private String tiers;
     private String filling;
 
     public Cake () {
         super();
     }
 
-    public Cake (String name, double price, double quantity, int tiers, String filling) {
+    public Cake (String name, double price, double quantity, String tiers, String filling) {
         super(name, price, quantity);
         this.tiers = tiers;
         this.filling = filling;
     }
 
     @Override
-    public double discount() { // if tiers - 1 = return 0.8
-
-        return 0;
+    public double discount() {
+        if (quantity < 10) {
+            return 1;
+        } else if (quantity < 20) {
+            return 0.8;
+        } else {
+            return 0.75;
+        }
     }
 
-    public int getTiers() {
+    public String getTiers() {
         return tiers;
     }
 
-    public void setTiers(int tiers) {
+    public void setTiers(String tiers) {
         this.tiers = tiers;
     }
 

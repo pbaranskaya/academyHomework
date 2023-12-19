@@ -15,18 +15,5 @@ public class DateValidatorFormat1 implements Validator {
         return p;
     }
 
-    public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-        Validator v = new DateValidatorFormat1();
-        System.out.print("Дата: ");
-        String date = sc.nextLine();
-        System.out.println(v.validate(date));
-        if (v.validate(date)) {
-            LocalDate dateOfBirth = LocalDate.parse(date);
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern
-                    ("Месяц: MMMM, день: dd, год: yyyy", Locale.US);
-            System.out.println(dateOfBirth.format(formatter));
-        }
-    }
 }

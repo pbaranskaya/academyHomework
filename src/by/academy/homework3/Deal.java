@@ -5,10 +5,10 @@ import java.util.Objects;
 
 public class Deal {
 
-    User seller;
-    User buyer;
-    Product[] products;
-    LocalDate dealDate;
+    private User seller;
+    private User buyer;
+    private Product[] products;
+    private LocalDate dealDate;
     protected final LocalDate deadlineDate = LocalDate.now().plusDays(10);
     private int current;
 
@@ -23,6 +23,18 @@ public class Deal {
         }
         return result;
     }
+
+    public void deleteProduct (int index) {
+        if (index < 0 || index >= current) {
+            System.out.println("Введите правильный индекс");
+            return;
+        }
+        if (index != products.length - 1) {
+            System.arraycopy(products, index + 1, products, index, products.length - index - 1);
+        }
+        products[current-- - 1] = null;
+    }
+
 
     public void submit() {
         double price = calculateFullPrice();

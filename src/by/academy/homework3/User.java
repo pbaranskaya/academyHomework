@@ -14,6 +14,19 @@ public class User {
     String Phone;
     String Email;
 
+//    public User () {
+//        super();
+//    }
+
+    public User (String name, double money, LocalDate dateOfBirth, String Phone, String Email) {
+        super();
+        this.name = name;
+        this.money = money;
+        this.dateOfBirth = dateOfBirth;
+        this.Phone = Phone;
+        this.Email = Email;
+    }
+
     public boolean hasEnoughMoney(double price) {
         return money >= price;
     }

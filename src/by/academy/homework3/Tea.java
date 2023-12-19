@@ -16,9 +16,14 @@ public class Tea extends Product {
     }
 
     @Override
-    public double discount(){ // if temperаture - холодный = return 0.8
-
-        return 0;
+    public double discount() {
+        if (quantity < 10) {
+            return 1;
+        } else if (quantity < 20) {
+            return 0.8;
+        } else {
+            return 0.75;
+        }
     }
 
     public String getTemperature() {

@@ -12,11 +12,5 @@ public class DateValidatorFormat2 implements Validator {
         return p;
     }
 
-    public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-        Validator v = new DateValidatorFormat2();
-        System.out.print("Дата: ");
-        System.out.println(v.validate(sc.nextLine()));
-    }
 }
