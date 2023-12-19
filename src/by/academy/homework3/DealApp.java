@@ -150,9 +150,12 @@ public class DealApp {
             }
         }
 
-        System.out.println("Ввод дата рождения");
+        sc.nextLine();
 
-        User user = new User(name, 30, date, phone, email);
+        System.out.println("Кошелек: ");
+        double money = sc.nextInt();
+
+        User user = new User(name, money, date, phone, email);
         return user;
     }
 }
