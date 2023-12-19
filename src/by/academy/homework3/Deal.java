@@ -43,7 +43,7 @@ public class Deal {
         if (buyer.hasEnoughMoney(price)) {
             printBill();
             transferMoney(seller, buyer);
-            setDealDate(LocalDate.now());
+//            setDealDate(LocalDate.now());
             System.out.println("Сделка совершена");
         } else {
             System.out.println("У покупателя нет столько денег: " + price);
@@ -51,24 +51,31 @@ public class Deal {
     }
 
     private void transferMoney(User seller, User buyer) {
-        double fullPrice = 0;
-        for (Product p : products) {
-            fullPrice += p.calculatePrice();
-        }
-        buyer.setMoney(buyer.getMoney() - fullPrice);
-        seller.setMoney(seller.getMoney() + fullPrice);
+//        double fullPrice = 0;
+//        for (Product p : products) {
+//            fullPrice += p.calculatePrice();
+//        }
+        buyer.setMoney(buyer.getMoney() - calculateFullPrice());
+        seller.setMoney(seller.getMoney() + calculateFullPrice());
     }
 
     private void printBill() {
+        System.out.println("Чек:");
         for (Product p : products) {
-            System.out.println("Позиция: " + p.getName() + " " + p.calculatePrice() + "$");
+            if (p == null) {
+                continue;
+            }
+            System.out.println("Позиция: " + p + " " + p.calculatePrice() + "$");
         }
-        System.out.println("========");
-        double fullPrice = 0;
-        for (Product p : products) {
-            fullPrice += p.calculatePrice();
-        }
-        System.out.println("Цена: " + fullPrice);
+//        System.out.println("========");
+//        double fullPrice = 0;
+//        for (Product p : products) {
+//            fullPrice += p.calculatePrice();
+//        }
+//        System.out.println("Цена: " + fullPrice);
+        System.out.println("Цена за все:  " + calculateFullPrice());
+        System.out.println("Дата сделки: "+ LocalDate.now());
+        System.out.println("Дата дедлайна сделки: " + deadlineDate);
     }
 
     private void grow() {

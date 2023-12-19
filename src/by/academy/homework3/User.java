@@ -14,9 +14,9 @@ public class User {
     String Phone;
     String Email;
 
-//    public User () {
-//        super();
-//    }
+    public User () {
+        super();
+    }
 
     public User (String name, double money, LocalDate dateOfBirth, String Phone, String Email) {
         super();

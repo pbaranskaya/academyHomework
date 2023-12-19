@@ -24,11 +24,9 @@ public class DealApp {
                 case "1":
                     System.out.println("Создаем продавца");
                     deal.setSeller(createUser(sc));
-                    continue;
                 case "2":
                     System.out.println("Создаем покупателя");
                     deal.setBuyer(createUser(sc));
-                    continue;
                 case "3":
                     // добавить продукт в сделку
                     Product p = createProduct(sc);
@@ -37,18 +35,15 @@ public class DealApp {
                     } else {
                         System.out.println("Зина отмена");
                     }
-                    continue;
                 case "4":
                     // распечатать корзину продуктов
 //                    sc.nextInt();
                     System.out.println("Корзина:");
                     deal.printProducts();
-                    continue;
                 case "5":
                     // удалить продукт из сделки
                     System.out.println("Удалить позицию");
                     deal.deleteProduct(sc.nextInt());
-                    continue;
                 case "0":
                     // завершить сделку
                     deal.submit();
@@ -149,7 +144,6 @@ public class DealApp {
             }
         }
 
-        sc.nextLine();
 
         System.out.println("Кошелек: ");
         double money = sc.nextInt();
