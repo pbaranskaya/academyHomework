@@ -40,7 +40,7 @@ public class DealApp {
                     continue;
                 case "4":
                     // распечатать корзину продуктов
-                    sc.nextInt();
+//                    sc.nextInt();
                     System.out.println("Корзина:");
                     deal.printProducts();
                     continue;
@@ -56,8 +56,6 @@ public class DealApp {
             }
         }
     }
-
-
 
 
     public static Product createProduct(Scanner sc) {
@@ -90,8 +88,8 @@ public class DealApp {
                 sc.nextInt();
             case "0":
                 System.out.println("Корзину собрали");
-                sc.nextInt();
-                break;
+//                sc.nextInt();
+//                break;
         }
         return product;
     }
@@ -101,7 +99,7 @@ public class DealApp {
         return LocalDate.now();
     }
 
-    public static LocalDate parseFormat2 (String date) {
+    public static LocalDate parseFormat2(String date) {
         return LocalDate.now();
     }
 

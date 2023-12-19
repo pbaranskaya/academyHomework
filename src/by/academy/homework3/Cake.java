@@ -26,6 +26,8 @@ public class Cake extends Product {
         }
     }
 
+
+
     public String getTiers() {
         return tiers;
     }
@@ -41,6 +43,8 @@ public class Cake extends Product {
     public void setFilling(String filling) {
         this.filling = filling;
     }
+
+
 
     @Override
     public String toString() {

@@ -26,6 +26,8 @@ public class Berry extends Product {
         }
     }
 
+
+
     public String getTaste() {
         return taste;
     }
