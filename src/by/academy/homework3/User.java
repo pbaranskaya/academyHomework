@@ -3,8 +3,8 @@ import java.time.LocalDate;
 import java.util.Objects;
 import java.util.Scanner;
 
-import static by.academy.homework3.DateFormat.dateFormat;
-import static by.academy.homework3.DateFormat.dateFormat1;
+//import static by.academy.homework3.DateFormat.dateFormat;
+//import static by.academy.homework3.DateFormat.dateFormat1;
 
 public class User {
 

@@ -24,13 +24,12 @@ public class DealApp {
                 case "1":
                     System.out.println("Создаем продавца");
                     deal.setSeller(createUser(sc));
+                    continue;
                 case "2":
                     System.out.println("Создаем покупателя");
                     deal.setBuyer(createUser(sc));
+                    continue;
                 case "3":
-                    // распечатать корзину продуктов
-                    deal.printProducts();
-                case "4":
                     // добавить продукт в сделку
                     Product p = createProduct(sc);
                     if (p != null) {
@@ -38,9 +37,15 @@ public class DealApp {
                     } else {
                         System.out.println("Зина отмена");
                     }
+                    continue;
+                case "4":
+                    // распечатать корзину продуктов
+                    deal.printProducts();
+                    continue;
                 case "5":
                     // удалить продукт из сделки
                     deal.deleteProduct(sc.nextInt());
+                    continue;
                 case "0":
                     // завершить сделку
                     deal.submit();
@@ -53,25 +58,35 @@ public class DealApp {
     public static Product createProduct(Scanner sc) {
 
         System.out.println("Введите номер продукта для покупки");
-        System.out.println("1 - ягода, 2 - торт, 3 - чай, 0 - для отмены");
+        System.out.println("1 - ягода, 2 - торт, 3 - чай, 0 - закончить сбор корзины");
         Product product = null;
-        boolean cycle = true;
 
         switch (sc.next()) {
             case "1":
                 System.out.println("Введите количество");
                 int quantity = sc.nextInt();
                 product = new Berry("Клубника", 1, quantity, "сладкая", "красная");
+                System.out.println(product);
+
+                sc.nextInt();
             case "2":
                 System.out.println("Введите количество");
                 quantity = sc.nextInt();
                 product = new Cake("Наполеон", 2, quantity, "2 слоя", "с кремом");
+                System.out.println(product);
+
+                sc.nextInt();
             case "3":
                 System.out.println("Введите количество");
                 quantity = sc.nextInt();
                 product = new Tea("Кертис", 3, quantity, "холодный", "с бергамотом");
+                System.out.println(product);
+
+                sc.nextInt();
             case "0":
-                cycle = false;
+                System.out.println("Корзину собрали");
+                sc.nextInt();
+                break;
         }
         return product;
     }
@@ -81,7 +96,7 @@ public class DealApp {
         return LocalDate.now();
     }
 
-    public static LocalDate parseFormat2(String date) {
+    public static LocalDate parseFormat2 (String date) {
         return LocalDate.now();
     }
 
@@ -113,6 +128,8 @@ public class DealApp {
             }
         }
 
+        sc.nextLine();
+
         System.out.println("Ввод даты рождения");
         LocalDate date = null;
         while (date == null) {
@@ -121,7 +138,7 @@ public class DealApp {
             if (date1.validate(dateStr)) {
                 date = parseFormat1(dateStr);
             } else if (date2.validate(dateStr)) {
-                date = parseFormat1(dateStr);
+                date = parseFormat2(dateStr);
             } else {
                 date = null;
                 System.out.println("Неправильная дата");
@@ -130,7 +147,7 @@ public class DealApp {
 
         System.out.println("Ввод дата рождения");
 
-        User user = new User(name, phone, email, date);
+        User user = new User(name, 30, date, phone, email);
         return user;
     }
 }

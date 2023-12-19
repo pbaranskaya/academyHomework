@@ -100,7 +100,7 @@ public class Deal {
 
     public void printProducts() {
         for (int i = 0; i < current; i++) {
-            System.out.println(products[i]);
+            System.out.println(i + " "  + products[i]);
         }
     }
 
