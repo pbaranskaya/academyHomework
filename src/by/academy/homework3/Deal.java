@@ -17,11 +17,8 @@ public class Deal {
             return 0;
         }
         double result = 0;
-        for (Product p : products) {
-            if (p == null) {
-                continue;
-            }
-            result += p.calculatePrice();
+        for (int i = 0; i < current; i++) {
+            result += products[i].getPrice();
         }
         return result;
     }

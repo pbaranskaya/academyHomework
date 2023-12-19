@@ -146,7 +146,7 @@ public class DealApp {
 
 
         System.out.println("Кошелек: ");
-        double money = sc.nextInt();
+        double money = sc.nextDouble();
 
         User user = new User(name, money, date, phone, email);
         return user;
