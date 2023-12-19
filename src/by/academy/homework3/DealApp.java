@@ -88,6 +88,7 @@ public class DealApp {
                 sc.nextInt();
             case "0":
                 System.out.println("Корзину собрали");
+//
 //                sc.nextInt();
 //                break;
         }
