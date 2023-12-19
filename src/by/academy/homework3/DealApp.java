@@ -1,10 +1,14 @@
 package by.academy.homework3;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class DealApp {
     private static final Validator EMAIL_VALIDATOR = new EmailValidator();
+    private static final Validator PHONE_VALIDATOR = new BelarussianPhoneValidator();
     private static final DateValidatorFormat1 date1 = new DateValidatorFormat1();
     private static final DateValidatorFormat2 date2 = new DateValidatorFormat2();
     private static final Scanner sc = new Scanner(System.in);
@@ -43,14 +47,15 @@ public class DealApp {
                     break;
             }
         }
+    }
 
 
-        public Product createProduct(Scanner sc) {
+    public static Product createProduct(Scanner sc) {
 
-            System.out.println("Введите номер продукта для покупки");
-         System.out.println("1 - ягода, 2 - торт, 3 - чай, 0 - для отмены");
-         Product product = null;
-            boolean cycle=true;
+        System.out.println("Введите номер продукта для покупки");
+        System.out.println("1 - ягода, 2 - торт, 3 - чай, 0 - для отмены");
+        Product product = null;
+        boolean cycle = true;
 
         switch (sc.next()) {
             case "1":
@@ -72,14 +77,15 @@ public class DealApp {
     }
 
 
-//    public static LocalDate parseFormat1 (String date) {
-//        return LocalDate.now();
-//    }
-//
-//    public static LocalDate parseFormat2 (String date) {
-//        return LocalDate.now();
-//    }
-//
+    public static LocalDate parseFormat1(String date) {
+        return LocalDate.now();
+    }
+
+    public static LocalDate parseFormat2(String date) {
+        return LocalDate.now();
+    }
+
+
     public static User createUser(Scanner sc) {
 
         System.out.println("Ввод имени");
@@ -87,20 +93,29 @@ public class DealApp {
 
         System.out.println("Ввод email");
         String email = null;
-        while(email== null) {
+        while (email == null) {
 
             email = sc.next();
-            if(!EMAIL_VALIDATOR.validate(email)) {
+            if (!EMAIL_VALIDATOR.validate(email)) {
                 email = null;
-                System.out.println("email not correct enter again");
+                System.out.println("Неверный email");
             }
         }
 
         System.out.println("Ввод телефона");
+        String phone = null;
+        while (phone == null) {
 
-        System.out.println("Ввод дата рождения");
+            phone = sc.next();
+            if (!PHONE_VALIDATOR.validate(phone)) {
+                phone = null;
+                System.out.println("Неверный телефон");
+            }
+        }
+
+        System.out.println("Ввод даты рождения");
         LocalDate date = null;
-        while(date == null) {
+        while (date == null) {
             String dateStr = sc.nextLine();
 
             if (date1.validate(dateStr)) {
@@ -108,19 +123,17 @@ public class DealApp {
             } else if (date2.validate(dateStr)) {
                 date = parseFormat1(dateStr);
             } else {
-                date  = null;
+                date = null;
                 System.out.println("Неправильная дата");
             }
         }
 
         System.out.println("Ввод дата рождения");
-    }
 
-    User user = new User(String name, double money, LocalDate dateOfBirth, String Phone, String Email);
-
-    return user;
-}
+        User user = new User(name, phone, email, date);
+        return user;
     }
 }
+
 
 
