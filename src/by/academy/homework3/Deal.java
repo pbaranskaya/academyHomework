@@ -109,7 +109,7 @@ public class Deal {
 
     public void printProducts() {
         for (int i = 0; i < current; i++) {
-            System.out.println(i + " "  + products[i]);
+            System.out.println((i + 1) + " - " + products[i]);
         }
     }
 
