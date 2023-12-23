@@ -133,24 +133,23 @@ public class DealApp {
 
         System.out.println("Ввод даты рождения");
         LocalDate date = null;
-//        while (date == null) {
-        String dateStr = sc.nextLine();
-
-        if (date1.validate(dateStr)) {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern(
-                    "dd/MM/yyyy", Locale.US);
-            date = LocalDate.parse(dateStr, formatter);
-            System.out.println(date.format(newFormatter));
-        } else if (date2.validate(dateStr)) {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern(
-                    "dd-MM-yyyy", Locale.US);
-            date = LocalDate.parse(dateStr, formatter);
-            System.out.println(date.format(newFormatter));
-        } else {
-            dateStr = null;
-            System.out.println("Неправильная дата");
+        while (date == null) {
+            String dateStr = sc.nextLine();
+            if (date1.validate(dateStr)) {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern(
+                        "dd/MM/yyyy", Locale.US);
+                date = LocalDate.parse(dateStr, formatter);
+                System.out.println(date.format(newFormatter));
+            } else if (date2.validate(dateStr)) {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern(
+                        "dd-MM-yyyy", Locale.US);
+                date = LocalDate.parse(dateStr, formatter);
+                System.out.println(date.format(newFormatter));
+            } else {
+                date = null;
+                System.out.println("Неправильная дата");
+            }
         }
-
 
         System.out.println("Кошелек: ");
         double money = sc.nextDouble();
