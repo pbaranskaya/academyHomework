@@ -12,8 +12,8 @@ public class DealApp {
     private static final DateValidatorFormat1 date1 = new DateValidatorFormat1();
     private static final DateValidatorFormat2 date2 = new DateValidatorFormat2();
     private static final Scanner sc = new Scanner(System.in);
-//    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern
-//            ("MMMM, dd, yyyy HH:mm:ss", Locale.US);
+    private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern
+            ("День: dd Месяц: MM Год: yyyy", Locale.US);
 
     public static void main(String[] args) {
 
@@ -113,14 +113,13 @@ public class DealApp {
     }
 
 
-    public static LocalDate parseFormat1(String date) {
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM, dd, yyyy HH:mm:ss", Locale.US);
-        return LocalDate.now();
-    }
-
-    public static LocalDate parseFormat2(String date) {
-        return LocalDate.now();
-    }
+//    public static LocalDate parseFormat1(String date) {
+//        return LocalDate.now();
+//    }
+//
+//    public static LocalDate parseFormat2(String date) {
+//        return LocalDate.now();
+//    }
 
 
     public static User createUser(Scanner sc) {
@@ -154,18 +153,25 @@ public class DealApp {
 
         System.out.println("Ввод даты рождения");
         LocalDate date = null;
-        while (date == null) {
+//        while (date == null) {
             String dateStr = sc.nextLine();
 
             if (date1.validate(dateStr)) {
-                date = parseFormat1(dateStr);
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern(
+                        "dd/MM/yyyy", Locale.US);
+                DateTimeFormatter to = DateTimeFormatter.ofPattern("День: dd Месяц: MM Год: yyyy", Locale.US);
+                date = LocalDate.parse(dateStr, formatter);
+                System.out.println(date.format(to));
             } else if (date2.validate(dateStr)) {
-                date = parseFormat2(dateStr);
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern(
+                        "dd-MM-yyyy", Locale.US);
+                DateTimeFormatter to = DateTimeFormatter.ofPattern("День: dd Месяц: MM Год: yyyy", Locale.US);
+                date = LocalDate.parse(dateStr, formatter);
+                System.out.println(date.format(to));
             } else {
-                date = null;
+                dateStr = null;
                 System.out.println("Неправильная дата");
             }
-        }
 
 
         System.out.println("Кошелек: ");

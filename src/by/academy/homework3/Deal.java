@@ -67,7 +67,7 @@ public class Deal {
 //            fullPrice += p.calculatePrice();
 //        }
 //        System.out.println("Цена: " + fullPrice);
-        System.out.println("Цена за все:  " + calculateFullPrice());
+        System.out.println("Цена за все со скидкой:  " + calculateFullPrice());
         System.out.println("Дата сделки: "+ LocalDate.now());
         System.out.println("Дата дедлайна сделки: " + deadlineDate);
     }
