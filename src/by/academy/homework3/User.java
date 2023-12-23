@@ -4,16 +4,14 @@ import java.time.LocalDate;
 import java.util.Objects;
 import java.util.Scanner;
 
-//import static by.academy.homework3.DateFormat.dateFormat;
-//import static by.academy.homework3.DateFormat.dateFormat1;
 
 public class User {
 
-    String name;
-    double money;
-    LocalDate dateOfBirth;
-    String Phone;
-    String Email;
+    private String name;
+    private double money;
+    private LocalDate dateOfBirth;
+    private String Phone;
+    private String Email;
 
     public User() {
         super();
