@@ -55,18 +55,16 @@ public class DealApp {
                     deal.submit();
                     break;
             }
+            sc.close();
         }
     }
 
     public static void printMainMenu(Scanner sc) {
 
         System.out.println("Выберите действие: ");
-        System.out.println("1 - Создание продавца");
-        System.out.println("2 - Создание покупателя");
-        System.out.println("3 - Выбор продукта");
-        System.out.println("4 - Просмотр товаров");
-        System.out.println("5 - Удаление товара");
-        System.out.println("0 - Завершить сделку");
+        System.out.println("1 - Создание продавца 2 - Создание покупателя");
+        System.out.println("3 - Выбор продукта    4 - Просмотр товаров");
+        System.out.println("5 - Удаление товара   0 - Завершить сделку");
     }
 
     public static Product createProduct(Scanner sc) {
