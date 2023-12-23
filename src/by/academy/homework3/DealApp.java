@@ -53,7 +53,6 @@ public class DealApp {
                     deal.submit();
                     break;
             }
-            sc.close();
         }
     }
 
@@ -128,9 +127,11 @@ public class DealApp {
             }
         }
 
-        System.out.println("Ввод даты рождения");
+        sc.nextLine();
 
+        System.out.println("Ввод даты рождения");
         LocalDate date = null;
+//        while (date == null) {
         String dateStr = sc.nextLine();
 
         if (date1.validate(dateStr)) {
@@ -149,6 +150,7 @@ public class DealApp {
             dateStr = null;
             System.out.println("Неправильная дата");
         }
+
 
         System.out.println("Кошелек: ");
         double money = sc.nextDouble();
