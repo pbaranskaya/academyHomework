@@ -12,6 +12,8 @@ public class DealApp {
     private static final DateValidatorFormat1 date1 = new DateValidatorFormat1();
     private static final DateValidatorFormat2 date2 = new DateValidatorFormat2();
     private static final Scanner sc = new Scanner(System.in);
+    private static final DateTimeFormatter newFormatter = DateTimeFormatter.ofPattern
+            ("День: dd Месяц: MM Год: yyyy", Locale.US);
 
     public static void main(String[] args) {
 
@@ -137,15 +139,13 @@ public class DealApp {
         if (date1.validate(dateStr)) {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern(
                     "dd/MM/yyyy", Locale.US);
-            DateTimeFormatter to = DateTimeFormatter.ofPattern("День: dd Месяц: MM Год: yyyy", Locale.US);
             date = LocalDate.parse(dateStr, formatter);
-            System.out.println(date.format(to));
+            System.out.println(date.format(newFormatter));
         } else if (date2.validate(dateStr)) {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern(
                     "dd-MM-yyyy", Locale.US);
-            DateTimeFormatter to = DateTimeFormatter.ofPattern("День: dd Месяц: MM Год: yyyy", Locale.US);
             date = LocalDate.parse(dateStr, formatter);
-            System.out.println(date.format(to));
+            System.out.println(date.format(newFormatter));
         } else {
             dateStr = null;
             System.out.println("Неправильная дата");
