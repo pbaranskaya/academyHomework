@@ -55,39 +55,37 @@ public class DealApp {
                     deal.submit();
                     break;
             }
-            sc.close();
         }
     }
 
     public static void printMainMenu(Scanner sc) {
 
         System.out.println("Выберите действие: ");
-        System.out.println("1 - Создание продавца 2 - Создание покупателя");
-        System.out.println("3 - Выбор продукта    4 - Просмотр товаров");
-        System.out.println("5 - Удаление товара   0 - Завершить сделку");
+        System.out.println("1 - Создание продавца 2 - Создание покупателя 3 - Выбор продукта");
+        System.out.println("4 - Просмотр товаров  5 - Удаление товара     0 - Завершить сделку");
     }
 
     public static Product createProduct(Scanner sc) {
 
         System.out.println("Введите номер продукта для покупки");
-        System.out.println("я - ягода, т - торт, ч - чай, stop - закончить сбор корзины");
+        System.out.print("я - ягода, т - торт, ч - чай, stop - закончить сбор корзины: ");
         Product product = null;
 
         switch (sc.next().toLowerCase()) {
             case "я":
-                System.out.println("Введите количество");
+                System.out.print("Введите количество: ");
                 int quantity = sc.nextInt();
                 product = new Berry("Клубника", 1, quantity, "сладкая", "красная");
                 System.out.println(product);
                 break;
             case "т":
-                System.out.println("Введите количество");
+                System.out.print("Введите количество: ");
                 quantity = sc.nextInt();
                 product = new Cake("Наполеон", 2, quantity, "2 слоя", "с кремом");
                 System.out.println(product);
                 break;
             case "ч":
-                System.out.println("Введите количество");
+                System.out.print("Введите количество: ");
                 quantity = sc.nextInt();
                 product = new Tea("Липтон", 3, quantity, "холодный", "с бергамотом");
                 System.out.println(product);
@@ -104,10 +102,10 @@ public class DealApp {
 
     public static User createUser(Scanner sc) {
 
-        System.out.println("Ввод имени");
+        System.out.print("Ввод имени: ");
         String name = sc.next();
 
-        System.out.println("Ввод email");
+        System.out.print("Ввод email: ");
         String email = null;
         while (email == null) {
             email = sc.next();
@@ -117,7 +115,7 @@ public class DealApp {
             }
         }
 
-        System.out.println("Ввод телефона");
+        System.out.print("Ввод телефона: ");
         String phone = null;
         while (phone == null) {
             phone = sc.next();
@@ -129,7 +127,7 @@ public class DealApp {
 
         sc.nextLine();
 
-        System.out.println("Ввод даты рождения");
+        System.out.print("Ввод даты рождения: ");
         LocalDate date = null;
         while (date == null) {
             String dateStr = sc.nextLine();
@@ -149,7 +147,7 @@ public class DealApp {
             }
         }
 
-        System.out.println("Кошелек: ");
+        System.out.print("Кошелек: ");
         double money = sc.nextDouble();
 
         User user = new User(name, money, date, phone, email);

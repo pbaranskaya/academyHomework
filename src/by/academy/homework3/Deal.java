@@ -56,6 +56,7 @@ public class Deal {
         for (int i = 0; i < current; i++) {
             System.out.println("Позиция: " + products[i] + " " + products[i].calculatePrice() + "$");
         }
+        System.out.println("=======================================================");
         System.out.println("Цена за все со скидкой:  " + calculateFullPrice() + "$");
         System.out.println("Дата сделки: " + LocalDate.now());
         System.out.println("Дата дедлайна сделки: " + deadlineDate);
