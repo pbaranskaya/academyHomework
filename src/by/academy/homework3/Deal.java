@@ -19,7 +19,7 @@ public class Deal {
         }
         double result = 0;
         for (int i = 0; i < current; i++) {
-            result += products[i].getPrice();
+            result += products[i].calculatePrice();
         }
         return result;
     }

@@ -41,7 +41,6 @@ public class Cake extends Product {
         this.filling = filling;
     }
 
-
     @Override
     public String toString() {
         return "Cake{" +
