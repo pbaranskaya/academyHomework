@@ -12,8 +12,7 @@ public class DealApp {
     private static final DateValidatorFormat1 date1 = new DateValidatorFormat1();
     private static final DateValidatorFormat2 date2 = new DateValidatorFormat2();
     private static final Scanner sc = new Scanner(System.in);
-    private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern
-            ("День: dd Месяц: MM Год: yyyy", Locale.US);
+
 
     public static void main(String[] args) {
 
