@@ -17,15 +17,12 @@ public class Cake extends Product {
 
     @Override
     public double discount() {
-        if (quantity < 10) {
+        if (quantity < 2) {
             return 1;
-        } else if (quantity < 20) {
-            return 0.8;
         } else {
-            return 0.75;
+            return 0.8;
         }
     }
-
 
 
     public String getTiers() {

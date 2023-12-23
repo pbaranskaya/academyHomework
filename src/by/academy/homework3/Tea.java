@@ -19,10 +19,10 @@ public class Tea extends Product {
     public double discount() {
         if (quantity < 10) {
             return 1;
-        } else if (quantity < 20) {
-            return 0.8;
+        } else if (quantity < 30) {
+            return 0.6;
         } else {
-            return 0.75;
+            return 0.3;
         }
     }
 

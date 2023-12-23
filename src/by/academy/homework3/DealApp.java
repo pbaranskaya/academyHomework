@@ -12,38 +12,50 @@ public class DealApp {
     private static final DateValidatorFormat1 date1 = new DateValidatorFormat1();
     private static final DateValidatorFormat2 date2 = new DateValidatorFormat2();
     private static final Scanner sc = new Scanner(System.in);
+//    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern
+//            ("MMMM, dd, yyyy HH:mm:ss", Locale.US);
 
     public static void main(String[] args) {
 
-
         Deal deal = new Deal();
         System.out.println("Добро пожаловать в магазин");
+
         while (true) {
+//            System.out.println("Выбери действие");
+            printMainMenu(sc);
             String action = sc.next();
+
             switch (action) {
                 case "1":
                     System.out.println("Создаем продавца");
                     deal.setSeller(createUser(sc));
+                    continue;
                 case "2":
                     System.out.println("Создаем покупателя");
                     deal.setBuyer(createUser(sc));
+                    continue;
                 case "3":
                     // добавить продукт в сделку
-                    Product p = createProduct(sc);
-                    if (p != null) {
-                        deal.add(p);
-                    } else {
-                        System.out.println("Зина отмена");
+                    while (true){
+
+                        Product p = createProduct(sc);
+                        if (p != null) {
+                            deal.add(p);
+                        } else {
+                            break ;
+                        }
                     }
+                    continue;
                 case "4":
                     // распечатать корзину продуктов
-//                    sc.nextInt();
                     System.out.println("Корзина:");
                     deal.printProducts();
+                    continue;
                 case "5":
                     // удалить продукт из сделки
                     System.out.println("Удалить позицию");
-                    deal.deleteProduct(sc.nextInt());
+                    deal.deleteProduct(sc.nextInt() - 1);
+                    continue;
                 case "0":
                     // завершить сделку
                     deal.submit();
@@ -52,46 +64,57 @@ public class DealApp {
         }
     }
 
+    public static void printMainMenu(Scanner sc){
 
+        System.out.println("Выберите действие: ");
+        System.out.println("1 - Создание продавца");
+        System.out.println("2 - Создание покупателя");
+        System.out.println("3 - Выбор продукта");
+        System.out.println("4 - Просмотр товаров");
+        System.out.println("5 - Удаление товара");
+        System.out.println("0 - Завершить сделку");
+
+
+    }
     public static Product createProduct(Scanner sc) {
 
         System.out.println("Введите номер продукта для покупки");
-        System.out.println("1 - ягода, 2 - торт, 3 - чай, 0 - закончить сбор корзины");
+        System.out.println("я - ягода, т - торт, ч - чай, stop - закончить сбор корзины");
         Product product = null;
 
-        switch (sc.next()) {
-            case "1":
+        switch (sc.next().toLowerCase()) {
+            case "я":
                 System.out.println("Введите количество");
                 int quantity = sc.nextInt();
                 product = new Berry("Клубника", 1, quantity, "сладкая", "красная");
                 System.out.println(product);
-
-                sc.nextInt();
-            case "2":
+                break;
+            case "т":
                 System.out.println("Введите количество");
                 quantity = sc.nextInt();
                 product = new Cake("Наполеон", 2, quantity, "2 слоя", "с кремом");
                 System.out.println(product);
-
-                sc.nextInt();
-            case "3":
+                break;
+            case "ч":
                 System.out.println("Введите количество");
                 quantity = sc.nextInt();
                 product = new Tea("Липтон", 3, quantity, "холодный", "с бергамотом");
                 System.out.println(product);
+                break;
 
-                sc.nextInt();
-            case "0":
+            case "stop":
                 System.out.println("Корзину собрали");
-//
-//                sc.nextInt();
-//                break;
+                break;
+            default:
+                System.out.println("Not valid choice");
         }
+
         return product;
     }
 
 
     public static LocalDate parseFormat1(String date) {
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM, dd, yyyy HH:mm:ss", Locale.US);
         return LocalDate.now();
     }
 
@@ -152,6 +175,3 @@ public class DealApp {
         return user;
     }
 }
-
-
-

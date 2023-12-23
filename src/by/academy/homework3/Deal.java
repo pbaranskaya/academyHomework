@@ -58,11 +58,8 @@ public class Deal {
 
     private void printBill() {
         System.out.println("Чек:");
-        for (Product p : products) {
-            if (p == null) {
-                continue;
-            }
-            System.out.println("Позиция: " + p + " " + p.calculatePrice() + "$");
+        for (int i = 0; i < current; i++) {
+            System.out.println("Позиция: " + products[i] + " " + products[i].calculatePrice() + "$");
         }
 //        System.out.println("========");
 //        double fullPrice = 0;
