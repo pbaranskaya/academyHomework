@@ -1,4 +1,5 @@
 package by.academy.homework3;
+
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Objects;
@@ -23,7 +24,7 @@ public class Deal {
         return result;
     }
 
-    public void deleteProduct (int index) {
+    public void deleteProduct(int index) {
         if (index < 0 || index >= current) {
             System.out.println("Введите правильный индекс");
             return;
@@ -34,13 +35,11 @@ public class Deal {
         products[current-- - 1] = null;
     }
 
-
     public void submit() {
         double price = calculateFullPrice();
         if (buyer.hasEnoughMoney(price)) {
             printBill();
             transferMoney(seller, buyer);
-//            setDealDate(LocalDate.now());
             System.out.println("Сделка совершена");
         } else {
             System.out.println("У покупателя нет столько денег: " + price);
@@ -48,10 +47,6 @@ public class Deal {
     }
 
     private void transferMoney(User seller, User buyer) {
-//        double fullPrice = 0;
-//        for (Product p : products) {
-//            fullPrice += p.calculatePrice();
-//        }
         buyer.setMoney(buyer.getMoney() - calculateFullPrice());
         seller.setMoney(seller.getMoney() + calculateFullPrice());
     }
@@ -62,13 +57,13 @@ public class Deal {
             System.out.println("Позиция: " + products[i] + " " + products[i].calculatePrice() + "$");
         }
         System.out.println("Цена за все со скидкой:  " + calculateFullPrice() + "$");
-        System.out.println("Дата сделки: "+ LocalDate.now());
+        System.out.println("Дата сделки: " + LocalDate.now());
         System.out.println("Дата дедлайна сделки: " + deadlineDate);
     }
 
     private void grow() {
         Product[] newProducts = new Product[products.length * 2 + 1];
-        System.arraycopy(products, 0, newProducts,0, products.length);
+        System.arraycopy(products, 0, newProducts, 0, products.length);
         products = newProducts;
     }
 
@@ -83,14 +78,13 @@ public class Deal {
         products[current++] = product;
     }
 
-
     public void delete(int index) {
         if (index < 0 || index >= current) {
             System.out.println("Неправильный индекс");
             return;
         }
         if (index != products.length - 1) {
-            System.arraycopy(products,index + 1,products,index, products.length - index - 1);
+            System.arraycopy(products, index + 1, products, index, products.length - index - 1);
         }
         products[current-- - 1] = null;
     }
@@ -100,7 +94,6 @@ public class Deal {
             System.out.println((i + 1) + " - " + products[i]);
         }
     }
-
 
     public User getSeller() {
         return seller;
@@ -158,5 +151,4 @@ public class Deal {
                 ", dealDate=" + dealDate +
                 '}';
     }
-
 }

@@ -5,11 +5,11 @@ public class Cake extends Product {
     private String tiers;
     private String filling;
 
-    public Cake () {
+    public Cake() {
         super();
     }
 
-    public Cake (String name, double price, double quantity, String tiers, String filling) {
+    public Cake(String name, double price, double quantity, String tiers, String filling) {
         super(name, price, quantity);
         this.tiers = tiers;
         this.filling = filling;
@@ -40,7 +40,6 @@ public class Cake extends Product {
     public void setFilling(String filling) {
         this.filling = filling;
     }
-
 
 
     @Override

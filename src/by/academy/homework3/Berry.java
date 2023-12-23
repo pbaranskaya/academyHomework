@@ -5,11 +5,11 @@ public class Berry extends Product {
     private String taste;
     private String color;
 
-    public Berry () {
+    public Berry() {
         super();
     }
 
-    public Berry (String name, double price, double quantity, String taste, String color) {
+    public Berry(String name, double price, double quantity, String taste, String color) {
         super(name, price, quantity);
         this.taste = taste;
         this.color = color;
@@ -25,7 +25,6 @@ public class Berry extends Product {
             return 0.75;
         }
     }
-
 
 
     public String getTaste() {

@@ -14,6 +14,4 @@ public class DateValidatorFormat1 implements Validator {
     public Pattern getPattern() {
         return p;
     }
-
-
 }

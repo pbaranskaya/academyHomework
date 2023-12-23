@@ -9,5 +9,4 @@ public interface Validator {
     default boolean validate(String string) {
         return getPattern().matcher(string).matches();
     }
-
 }

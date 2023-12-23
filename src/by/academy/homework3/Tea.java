@@ -5,11 +5,11 @@ public class Tea extends Product {
     private String temperature;
     private String type;
 
-    public Tea () {
+    public Tea() {
         super();
     }
 
-    public Tea (String name, double price, double quantity, String temperature, String type) {
+    public Tea(String name, double price, double quantity, String temperature, String type) {
         super(name, price, quantity);
         this.temperature = temperature;
         this.type = type;

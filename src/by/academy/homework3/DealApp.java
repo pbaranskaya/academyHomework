@@ -13,14 +13,12 @@ public class DealApp {
     private static final DateValidatorFormat2 date2 = new DateValidatorFormat2();
     private static final Scanner sc = new Scanner(System.in);
 
-
     public static void main(String[] args) {
 
         Deal deal = new Deal();
         System.out.println("Добро пожаловать в магазин");
 
         while (true) {
-//            System.out.println("Выбери действие");
             printMainMenu(sc);
             String action = sc.next();
 
@@ -34,36 +32,32 @@ public class DealApp {
                     deal.setBuyer(createUser(sc));
                     continue;
                 case "3":
-                    // добавить продукт в сделку
-                    while (true){
-
+                    while (true) {
                         Product p = createProduct(sc);
                         if (p != null) {
                             deal.add(p);
                         } else {
-                            break ;
+                            break;
                         }
                     }
                     continue;
                 case "4":
-                    // распечатать корзину продуктов
                     System.out.println("Корзина:");
                     deal.printProducts();
                     continue;
                 case "5":
-                    // удалить продукт из сделки
                     System.out.println("Удалить позицию");
                     deal.deleteProduct(sc.nextInt() - 1);
                     continue;
                 case "0":
-                    // завершить сделку
                     deal.submit();
                     break;
             }
+            sc.close();
         }
     }
 
-    public static void printMainMenu(Scanner sc){
+    public static void printMainMenu(Scanner sc) {
 
         System.out.println("Выберите действие: ");
         System.out.println("1 - Создание продавца");
@@ -72,9 +66,8 @@ public class DealApp {
         System.out.println("4 - Просмотр товаров");
         System.out.println("5 - Удаление товара");
         System.out.println("0 - Завершить сделку");
-
-
     }
+
     public static Product createProduct(Scanner sc) {
 
         System.out.println("Введите номер продукта для покупки");
@@ -100,25 +93,14 @@ public class DealApp {
                 product = new Tea("Липтон", 3, quantity, "холодный", "с бергамотом");
                 System.out.println(product);
                 break;
-
             case "stop":
                 System.out.println("Корзину собрали");
                 break;
             default:
                 System.out.println("Not valid choice");
         }
-
         return product;
     }
-
-
-//    public static LocalDate parseFormat1(String date) {
-//        return LocalDate.now();
-//    }
-//
-//    public static LocalDate parseFormat2(String date) {
-//        return LocalDate.now();
-//    }
 
 
     public static User createUser(Scanner sc) {
@@ -129,7 +111,6 @@ public class DealApp {
         System.out.println("Ввод email");
         String email = null;
         while (email == null) {
-
             email = sc.next();
             if (!EMAIL_VALIDATOR.validate(email)) {
                 email = null;
@@ -140,7 +121,6 @@ public class DealApp {
         System.out.println("Ввод телефона");
         String phone = null;
         while (phone == null) {
-
             phone = sc.next();
             if (!PHONE_VALIDATOR.validate(phone)) {
                 phone = null;
@@ -148,30 +128,27 @@ public class DealApp {
             }
         }
 
-        sc.nextLine();
-
         System.out.println("Ввод даты рождения");
+
         LocalDate date = null;
-//        while (date == null) {
-            String dateStr = sc.nextLine();
+        String dateStr = sc.nextLine();
 
-            if (date1.validate(dateStr)) {
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern(
-                        "dd/MM/yyyy", Locale.US);
-                DateTimeFormatter to = DateTimeFormatter.ofPattern("День: dd Месяц: MM Год: yyyy", Locale.US);
-                date = LocalDate.parse(dateStr, formatter);
-                System.out.println(date.format(to));
-            } else if (date2.validate(dateStr)) {
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern(
-                        "dd-MM-yyyy", Locale.US);
-                DateTimeFormatter to = DateTimeFormatter.ofPattern("День: dd Месяц: MM Год: yyyy", Locale.US);
-                date = LocalDate.parse(dateStr, formatter);
-                System.out.println(date.format(to));
-            } else {
-                dateStr = null;
-                System.out.println("Неправильная дата");
-            }
-
+        if (date1.validate(dateStr)) {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern(
+                    "dd/MM/yyyy", Locale.US);
+            DateTimeFormatter to = DateTimeFormatter.ofPattern("День: dd Месяц: MM Год: yyyy", Locale.US);
+            date = LocalDate.parse(dateStr, formatter);
+            System.out.println(date.format(to));
+        } else if (date2.validate(dateStr)) {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern(
+                    "dd-MM-yyyy", Locale.US);
+            DateTimeFormatter to = DateTimeFormatter.ofPattern("День: dd Месяц: MM Год: yyyy", Locale.US);
+            date = LocalDate.parse(dateStr, formatter);
+            System.out.println(date.format(to));
+        } else {
+            dateStr = null;
+            System.out.println("Неправильная дата");
+        }
 
         System.out.println("Кошелек: ");
         double money = sc.nextDouble();

@@ -1,4 +1,5 @@
 package by.academy.homework3;
+
 import java.util.regex.Pattern;
 
 public class EmailValidator implements Validator {
@@ -15,5 +16,4 @@ public class EmailValidator implements Validator {
         Validator v = new EmailValidator();
         System.out.println(v.validate("pbaranskaya@gmail.com"));
     }
-
 }

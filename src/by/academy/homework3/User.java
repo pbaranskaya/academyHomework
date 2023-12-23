@@ -1,4 +1,5 @@
 package by.academy.homework3;
+
 import java.time.LocalDate;
 import java.util.Objects;
 import java.util.Scanner;
@@ -14,11 +15,11 @@ public class User {
     String Phone;
     String Email;
 
-    public User () {
+    public User() {
         super();
     }
 
-    public User (String name, double money, LocalDate dateOfBirth, String Phone, String Email) {
+    public User(String name, double money, LocalDate dateOfBirth, String Phone, String Email) {
         super();
         this.name = name;
         this.money = money;
