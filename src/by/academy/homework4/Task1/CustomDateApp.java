@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 public class CustomDateApp {
+
     private static final DateValidator DATE_VALIDATOR = new DateValidator();
     private static final Scanner sc = new Scanner(System.in);
 
@@ -95,6 +96,7 @@ public class CustomDateApp {
         int period = (int) Math.abs((endDate.toEpochDay()) - startDate.toEpochDay());
         System.out.println("Количество дней в промежутке между датой 1 и датой 2: " + period);
     }
+
     public static boolean isleapYear(CustomDate customDate) {
         if (((customDate.year.value % 4 == 0) && (customDate.year.value  % 100 != 0)) ||
                 (customDate.year.value  % 400 == 0)) {
