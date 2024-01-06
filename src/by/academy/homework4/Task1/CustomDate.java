@@ -41,11 +41,6 @@ public class CustomDate {
             this.value = year;
         }
 
-        public boolean isleapYear() {
-            if (value % 4 == 0) {
-                return true;
-            } else return false;
-        }
     }
 
     public class Month {
@@ -58,59 +53,12 @@ public class CustomDate {
             this.value = month;
         }
 
-        public int getDays(int monthNumber, Year monthYear) {
-            switch (monthNumber) {
-
-                case 1:
-                    daysMonth = 31;
-                    break;
-                case 2:
-                    if (monthYear.isleapYear() == true)
-                        daysMonth = 29;
-                    else
-                        daysMonth = 28;
-                    break;
-                case 3:
-                    daysMonth = 31;
-                    break;
-                case 4:
-                    daysMonth = 30;
-                    break;
-                case 5:
-                    daysMonth = 31;
-                    break;
-                case 6:
-                    daysMonth = 30;
-                    break;
-                case 7:
-                    daysMonth = 31;
-                    break;
-                case 8:
-                    daysMonth = 31;
-                    break;
-                case 9:
-                    daysMonth = 30;
-                    break;
-                case 10:
-                    daysMonth = 31;
-                    break;
-                case 11:
-                    daysMonth = 30;
-                    break;
-                case 12:
-                    daysMonth = 31;
-                    break;
-                default:
-                    System.out.println("Месяц введен неверно");
-                    break;
-            }
-            return daysMonth;
-        }
     }
 
     public class Day {
         int value;
         String name;
+
         public Day(int day) {
             this.value = day;
         }
