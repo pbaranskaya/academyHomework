@@ -13,7 +13,7 @@ public class CustomDateApp {
         int year = 0;
         int month = 0;
         int day = 0;
-        Scanner sc = new Scanner(System.in);
+
 
         System.out.print("Введите год:");
         while (sc.hasNext()) {
