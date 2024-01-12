@@ -8,18 +8,18 @@ public class CreateDateMethods {
     private static final Scanner sc = new Scanner(System.in);
 
     public static CustomDate createDate_method1(Scanner sc) {
-        CustomDate CustomDate = null;
+        CustomDate customDate = null;
         System.out.print("Введите дату: ");
         String strDate = sc.next();
         if (DATE_VALIDATOR.validate(strDate)) {
-            CustomDate = new CustomDate(strDate);
-            System.out.println("Год: " + CustomDate.getYear().value);
-            System.out.println("Месяц: " + CustomDate.getMonth().value);
-            System.out.println("День месяца: " + CustomDate.getDay().value);
+            customDate = new CustomDate(strDate);
+            System.out.println("Год: " + customDate.getYear().value);
+            System.out.println("Месяц: " + customDate.getMonth().value);
+            System.out.println("День месяца: " + customDate.getDay().value);
         } else {
             System.out.println("Дата введена неверно. Повторите ввод");
         }
-        return CustomDate;
+        return customDate;
     }
 
     public static CustomDate createDate_method2(Scanner sc) {
@@ -69,7 +69,7 @@ public class CreateDateMethods {
             }
         }
 
-        CustomDate CustomDate = new CustomDate(year, month, day);
-        return CustomDate;
+        CustomDate customDate = new CustomDate(year, month, day);
+        return customDate;
     }
 }

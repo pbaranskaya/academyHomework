@@ -12,16 +12,16 @@ public class CustomDateApp {
 
     public static void main(String[] args) {
 
-        CustomDate CustomDate1 = createDate_method1(sc);
-        CustomDate1.printDayOfWeek();
-        CustomDate1.printCustomDayOfWeek();
-        System.out.println(isleapYear(CustomDate1)? "Год даты високосный" : "Год даты невисокосный");
+        CustomDate customDate1 = createDate_method1(sc);
+        customDate1.printDayOfWeek();
+        customDate1.printCustomDayOfWeek();
+        System.out.println(isleapYear(customDate1)? "Год даты високосный" : "Год даты невисокосный");
 
-        CustomDate CustomDate2 = createDate_method2(sc);
-        CustomDate2.printDayOfWeek();
-        CustomDate2.printCustomDayOfWeek();
-        System.out.println(isleapYear(CustomDate2)? "Год даты високосный" : "Год даты невисокосный");
+        CustomDate customDate2 = createDate_method2(sc);
+        customDate2.printDayOfWeek();
+        customDate2.printCustomDayOfWeek();
+        System.out.println(isleapYear(customDate2)? "Год даты високосный" : "Год даты невисокосный");
 
-        calculateDays(CustomDate1,CustomDate2);
+        calculateDays(customDate1,customDate2);
     }
 }
