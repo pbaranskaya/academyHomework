@@ -86,18 +86,6 @@ public class CustomDate {
         System.out.println("День недели в виде перечисления: " + this.dayOfWeek.name);
     }
 
-    public Year getYear() {
-        return year;
-    }
-
-    public Month getMonth() {
-        return month;
-    }
-
-    public Day getDay() {
-        return day;
-    }
-
     static void calculateDays(CustomDate startDate, CustomDate endDate) {
         LocalDateTime date1 = startDate.toLocalDate().atStartOfDay();
         LocalDateTime date2 = endDate.toLocalDate().atStartOfDay();
@@ -108,5 +96,17 @@ public class CustomDate {
     public static boolean isleapYear(CustomDate customDate) {
         LocalDate date = customDate.toLocalDate();
         return date.isLeapYear();
+    }
+
+    public Year getYear() {
+        return year;
+    }
+
+    public Month getMonth() {
+        return month;
+    }
+
+    public Day getDay() {
+        return day;
     }
 }
