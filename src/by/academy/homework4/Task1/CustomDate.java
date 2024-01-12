@@ -1,6 +1,8 @@
 package by.academy.homework4.Task1;
 
+import java.time.Duration;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class CustomDate {
 
@@ -8,10 +10,6 @@ public class CustomDate {
     public Month month;
     public Day day;
     static DaysOfWeek dayOfWeek;
-
-    public CustomDate() {
-        super();
-    }
 
     public CustomDate(int year, int month, int day) {
         super();
@@ -23,9 +21,10 @@ public class CustomDate {
 
     public CustomDate(String strDate) {
         super();
-//        this.year = new Year(Integer.parseInt(strDate.substring(6)));
-//        this.month = new Month(Integer.parseInt(strDate.substring(3, 5)));
-//        this.day = new Day(Integer.parseInt(strDate.substring(0, 2)));
+        this.year = new Year(Integer.parseInt(strDate.substring(6)));
+        this.month = new Month(Integer.parseInt(strDate.substring(3, 5)));
+        this.day = new Day(Integer.parseInt(strDate.substring(0, 2)));
+        this.enumDayOfWeek();
     }
 
     public LocalDate toLocalDate() {
@@ -38,29 +37,20 @@ public class CustomDate {
 
     public class Year {
         int value;
-
         public Year(int year) {
             this.value = year;
         }
-
     }
 
     public class Month {
         int value;
-        String name;
-        int daysMonth;
-        Year year;
-
         public Month(int month) {
             this.value = month;
         }
-
     }
 
     public class Day {
         int value;
-        String name;
-
         public Day(int day) {
             this.value = day;
         }
@@ -118,5 +108,17 @@ public class CustomDate {
 
     public void setDay(Day day) {
         this.day = day;
+    }
+
+    static void calculateDays(CustomDate startDate, CustomDate endDate) {
+        LocalDateTime date1 = startDate.toLocalDate().atStartOfDay();
+        LocalDateTime date2 = endDate.toLocalDate().atStartOfDay();
+        long daysBetween = Duration.between(date1, date2).toDays();
+        System.out.println("Количество дней между датами: " + daysBetween);
+    }
+
+    public static boolean isleapYear(CustomDate customDate) {
+        LocalDate date = customDate.toLocalDate();
+        return date.isLeapYear();
     }
 }
