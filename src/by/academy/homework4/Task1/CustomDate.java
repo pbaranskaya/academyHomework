@@ -37,7 +37,6 @@ public class CustomDate {
 
     public class Year {
         int value;
-
         public Year(int year) {
             this.value = year;
         }
@@ -45,7 +44,6 @@ public class CustomDate {
 
     public class Month {
         int value;
-
         public Month(int month) {
             this.value = month;
         }
@@ -53,7 +51,6 @@ public class CustomDate {
 
     public class Day {
         int value;
-
         public Day(int day) {
             this.value = day;
         }
