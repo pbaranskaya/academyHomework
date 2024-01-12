@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class CreateDateMethods {
 
     private static final DateValidator DATE_VALIDATOR = new DateValidator();
-    private static final Scanner sc = new Scanner(System.in);
 
     public static CustomDate createDate_method1(Scanner sc) {
         CustomDate customDate = null;
@@ -32,7 +31,11 @@ public class CreateDateMethods {
         while (sc.hasNext()) {
             if (sc.hasNextInt()) {
                 year = sc.nextInt();
-                break;
+                if (year <= 0) {
+                    System.out.println("Год не может быть отрицательным");
+                } else {
+                    break;
+                }
             } else {
                 System.out.println("Введен некорректный год. Повторите ввод");
                 sc.next();
