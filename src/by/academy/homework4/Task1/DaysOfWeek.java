@@ -2,17 +2,15 @@ package by.academy.homework4.Task1;
 
 public enum DaysOfWeek {
 
-    MONDAY("Понедельник", 1), TUESDAY("Вторник", 2),
-    WEDNESDAY("Среда", 3), THURSDAY("Четверг", 4),
-    FRIDAY("Пятница", 5), SATURDAY("Суббота", 6),
-    SUNDAY("Воскресенье", 7);
+    MONDAY("Понедельник"), TUESDAY("Вторник"),
+    WEDNESDAY("Среда"), THURSDAY("Четверг"),
+    FRIDAY("Пятница"), SATURDAY("Суббота"),
+    SUNDAY("Воскресенье");
 
     public final String name;
-    public final int daysNumber;
 
-    DaysOfWeek(String name, int daysNumber) {
+    DaysOfWeek(String name) {
         this.name = name;
-        this.daysNumber = daysNumber;
     }
 }
 
