@@ -1,7 +1,5 @@
 package by.academy.homework4.Task1;
 
-import by.academy.homework3.Validator;
-
 import java.util.regex.Pattern;
 
 public class DateValidator implements Validator {

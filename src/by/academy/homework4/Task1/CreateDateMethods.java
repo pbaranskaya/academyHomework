@@ -6,7 +6,7 @@ public class CreateDateMethods {
 
     private static final DateValidator DATE_VALIDATOR = new DateValidator();
 
-    public static CustomDate createDate_method1(Scanner sc) {
+    public static CustomDate createDateMethod1(Scanner sc) {
         CustomDate customDate = null;
         System.out.print("Введите дату: ");
         String strDate = sc.next();
@@ -21,7 +21,7 @@ public class CreateDateMethods {
         return customDate;
     }
 
-    public static CustomDate createDate_method2(Scanner sc) {
+    public static CustomDate createDateMethod2(Scanner sc) {
 
         int year = 0;
         int month = 0;
