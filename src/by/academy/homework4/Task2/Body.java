@@ -7,10 +7,8 @@ public class Body {
 
     public Body() {
         super();
-        Heart heart = new Heart();
-        this.heart = heart;
-        Lungs lungs = new Lungs();
-        this.lungs = lungs;
+        heart = new Heart();
+        lungs = new Lungs();
     }
 
     public class Heart {
