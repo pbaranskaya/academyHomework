@@ -14,6 +14,7 @@ public class CustomDate {
     }
 
     public CustomDate(int year, int month, int day) {
+        super();
         this.year = this.new Year(year);
         this.month = this.new Month(month);
         this.day = this.new Day(day);
@@ -21,9 +22,10 @@ public class CustomDate {
     }
 
     public CustomDate(String strDate) {
-        this.year = new Year(Integer.parseInt(strDate.substring(6)));
-        this.month = new Month(Integer.parseInt(strDate.substring(3, 5)));
-        this.day = new Day(Integer.parseInt(strDate.substring(0, 2)));
+        super();
+//        this.year = new Year(Integer.parseInt(strDate.substring(6)));
+//        this.month = new Month(Integer.parseInt(strDate.substring(3, 5)));
+//        this.day = new Day(Integer.parseInt(strDate.substring(0, 2)));
     }
 
     public LocalDate toLocalDate() {
