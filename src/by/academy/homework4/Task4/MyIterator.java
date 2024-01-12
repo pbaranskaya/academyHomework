@@ -1,13 +1,14 @@
 package by.academy.homework4.Task4;
 
+import java.util.Arrays;
 import java.util.Iterator;
 
-public class MyIterator <T> implements Iterator<T> {
+public class MyIterator<T> implements Iterator<T> {
 
     private T[] array;
     private int index;
 
-    public MyIterator(){
+    public MyIterator() {
         super();
     }
 
@@ -16,17 +17,15 @@ public class MyIterator <T> implements Iterator<T> {
     }
 
     @Override
-    public boolean hasNext(){
-        if(array == null || array.length <= index){
+    public boolean hasNext() {
+        if (array == null || array.length <= index) {
             return false;
         }
         return array[index] != null;
     }
 
     @Override
-    public T next(){
+    public T next() {
         return array[index++];
     }
-
-
 }
