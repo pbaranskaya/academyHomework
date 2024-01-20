@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Task5 {
-    public static void main(String[] args) { //123
+    public static void main(String[] args) {
 
         String str = "Тигр, Тигр, жгучий страх, ты горишь в ночных лесах. " +
                      "Чей бессмертный взор, любя, создал страшного тебя?";
