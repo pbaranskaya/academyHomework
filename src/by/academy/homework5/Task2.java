@@ -30,7 +30,7 @@ public class Task2 {
         }
     }
 
-//    private static void add(List<Integer> list) {  // либо в заданном диапазоне числа
+//    private static void add(List<Integer> list) {  // либо в заданном диапазоне числа (0-10)
 //        for (int i = 0; i < N_ADD; i++) {
 //            int a = (int) (Math.random() * 10 + 1);
 //            list.add(a);
