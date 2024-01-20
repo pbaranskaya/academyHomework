@@ -51,21 +51,17 @@ public class Solution {
         }
     }
 
-    public static DoublyLinkedListNode reverse(DoublyLinkedList list) {
-
-        DoublyLinkedListNode node = list.head;
-
-        while (node != null) {
-            DoublyLinkedListNode a = node.next;
-            node.next = node.prev;
-            node.prev = a;
-            node = a;
+    public static DoublyLinkedListNode reverse(DoublyLinkedListNode list) {
+        DoublyLinkedListNode current = list;
+        DoublyLinkedListNode head = list;
+        while (current != null) {
+            DoublyLinkedListNode temp = current.prev;
+            current.prev = current.next;
+            current.next = temp;
+            head = current;
+            current = current.prev;
         }
-
-        node = list.head;
-        list.head = list.tail;
-        list.tail = node;
-        return list.head;
+        return head;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -75,7 +71,7 @@ public class Solution {
         DoublyLinkedList llist = new DoublyLinkedList();
 
         System.out.print("Количество элементов (до 1000): ");
-        int llistCount = scanner.nextInt();
+        int llistCount = scanner.nextInt(); // это и есть t?
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
         if (llistCount < 0 || llistCount > 1000) {
             System.err.println("Число вне диапазона. Повторите ввод");
@@ -95,7 +91,7 @@ public class Solution {
         }
 
         System.out.print("Список в обратном порядке: ");
-        DoublyLinkedListNode llist1 = reverse(llist);
+        DoublyLinkedListNode llist1 = reverse(llist.head);
         printDoublyLinkedList(llist1, " ");
         scanner.close();
     }
