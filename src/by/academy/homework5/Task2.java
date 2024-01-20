@@ -30,6 +30,13 @@ public class Task2 {
         }
     }
 
+//    private static void add(List<Integer> list) {  // либо в заданном диапазоне числа
+//        for (int i = 0; i < N_ADD; i++) {
+//            int a = (int) (Math.random() * 10 + 1);
+//            list.add(a);
+//        }
+//    }
+
     private static void get(List<Integer> list) {
         for (int i = 0; i < N_GET; i++) {
             list.get((int) (Math.random() * (N_ADD - 1)));
