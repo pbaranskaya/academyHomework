@@ -51,17 +51,18 @@ public class Solution {
         }
     }
 
-    public static DoublyLinkedListNode reverse(DoublyLinkedListNode list) {
-        DoublyLinkedListNode current = list;
-        DoublyLinkedListNode head = list;
-        while (current != null) {
-            DoublyLinkedListNode temp = current.prev;
-            current.prev = current.next;
-            current.next = temp;
-            head = current;
-            current = current.prev;
-        }
-        return head;
+
+    public static DoublyLinkedListNode reverse(DoublyLinkedListNode tail) {
+        DoublyLinkedListNode temp = tail;
+        DoublyLinkedListNode newTail = tail;
+//        while (temp != null) {
+//            DoublyLinkedListNode prev = temp.prev;
+//            temp.prev = temp.next;
+//            temp.next = prev;
+//            newTail = temp;
+//            temp = temp.prev;
+//        }
+        return newTail;
     }
 
     private static final Scanner scanner = new Scanner(System.in);

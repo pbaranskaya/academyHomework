@@ -8,7 +8,7 @@ public class Task4 {
 
         int listSize = 10;
 
-        ArrayList<Integer> marks = new ArrayList<Integer>();
+        ArrayList<Integer> marks = new ArrayList<>();
 
         for (int i = 0; i < listSize; i++) {
             int a = (int) (Math.random() * 10 + 1);
