@@ -51,31 +51,15 @@ public class Solution {
         }
     }
 
-
     public static DoublyLinkedListNode reverse(DoublyLinkedListNode tail) {
         DoublyLinkedListNode temp = tail;
-        DoublyLinkedListNode newTail = tail;
         while (temp != null) {
-            DoublyLinkedListNode next = temp.next; // создать элемент некст (0)
-            temp.prev = next; // поменять местами ссылки
-            temp.next = temp.prev; // поменять местами ссылки
-            newTail = temp; // назначить теил
-            temp = temp.next; // присвоить новое значение
+            DoublyLinkedListNode next = temp.next;
+            temp.next = temp.prev;
+            temp.prev = next;
+            temp = temp.next;
         }
-        return newTail;
-    }
-
-    public static DoublyLinkedListNode reverse1(DoublyLinkedListNode head) {
-        DoublyLinkedListNode temp = head;
-        DoublyLinkedListNode newHead = head;
-        while (temp != null) {
-            DoublyLinkedListNode prev = temp.prev;
-            temp.prev = temp.next;
-            temp.next = prev;
-            newHead = temp;
-            temp = temp.prev;
-        }
-        return newHead;
+        return tail;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
