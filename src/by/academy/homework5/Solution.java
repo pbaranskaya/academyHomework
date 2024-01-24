@@ -55,13 +55,9 @@ public class Solution {
     public static DoublyLinkedListNode reverse(DoublyLinkedListNode tail) {
         DoublyLinkedListNode temp = tail;
         DoublyLinkedListNode newTail = tail;
-//        while (temp != null) {
-//            DoublyLinkedListNode prev = temp.prev;
-//            temp.prev = temp.next;
-//            temp.next = prev;
-//            newTail = temp;
-//            temp = temp.prev;
-//        }
+        while (temp != null) {
+
+        }
         return newTail;
     }
 
@@ -92,7 +88,7 @@ public class Solution {
         }
 
         System.out.print("Список в обратном порядке: ");
-        DoublyLinkedListNode llist1 = reverse(llist.head);
+        DoublyLinkedListNode llist1 = reverse(llist.tail);
         printDoublyLinkedList(llist1, " ");
         scanner.close();
     }
