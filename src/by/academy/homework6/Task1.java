@@ -20,10 +20,10 @@ public class Task1 {
         }
 
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-             FileWriter fw = new FileWriter(file);
-        ) {
+             FileWriter fw = new FileWriter(file)) {
 
             System.out.println("Введите строку: ");
+
             do {
                 str = br.readLine();
                 if (str.compareTo("stop") == 0)

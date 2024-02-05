@@ -1,6 +1,7 @@
 package by.academy.homework6.Task3;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class User implements Serializable {
 
