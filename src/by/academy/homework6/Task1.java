@@ -13,7 +13,7 @@ public class Task1 {
             dirs.mkdirs();
         }
 
-        File file = new File(dirs, "homework6.txt");
+        File file = new File(dirs, "task1.txt");
 
         if (!file.exists()) {
             file.createNewFile();
@@ -32,7 +32,12 @@ public class Task1 {
                 fw.write(str);
             } while (str.compareTo("stop") != 0);
             System.out.println("Запись завершена");
+
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
         }
     }
 }
+
+
 
