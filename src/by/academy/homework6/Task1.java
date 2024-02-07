@@ -26,8 +26,9 @@ public class Task1 {
 
             do {
                 str = br.readLine();
-                if (str.compareTo("stop") == 0)
+                if (str.compareTo("stop") == 0) {
                     break;
+                }
                 str = str + "\n";
                 fw.write(str);
             } while (str.compareTo("stop") != 0);
