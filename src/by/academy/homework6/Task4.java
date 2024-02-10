@@ -25,7 +25,7 @@ public class Task4 {
 
             while ((str = br.readLine()) != null) {
                 symbols += str.length();
-                sb = new StringBuilder(str);
+                sb.append(str);
             }
 
             System.out.println("Количество символов в файле: " + symbols);
@@ -37,7 +37,8 @@ public class Task4 {
                 }
                 FileWriter fw = new FileWriter(file);
                 int number = (int) (Math.random() * symbols);
-                fw.write(sb.substring(0, number));
+                String text = sb.toString();
+                fw.write(text.substring(0, number));
                 fw.close();
             }
 
