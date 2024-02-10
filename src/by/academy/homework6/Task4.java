@@ -21,11 +21,11 @@ public class Task4 {
 
             String str;
             int symbols = 0;
-            String text = "";
+            StringBuilder sb  = new StringBuilder();
 
             while ((str = br.readLine()) != null) {
                 symbols += str.length();
-                text = str;
+                sb = new StringBuilder(str);
             }
 
             System.out.println("Количество символов в файле: " + symbols);
@@ -37,7 +37,7 @@ public class Task4 {
                 }
                 FileWriter fw = new FileWriter(file);
                 int number = (int) (Math.random() * symbols);
-                fw.write(text.substring(0, number));
+                fw.write(sb.substring(0, number));
                 fw.close();
             }
 
