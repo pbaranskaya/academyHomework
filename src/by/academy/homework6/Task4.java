@@ -30,7 +30,7 @@ public class Task4 {
 
             System.out.println("Количество символов в файле: " + symbols);
 
-            for (int i = 1; i <= 5; i++) {
+            for (int i = 1; i <= 100; i++) {
                 File file = new File(dir, i + ".txt");
                 if (!file.exists()) {
                     file.createNewFile();
